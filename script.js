@@ -1,14 +1,11 @@
 const form = document.getElementById("shop-form");
 const itemName = document.getElementById("item-name");
 const itemQty = document.getElementById("item-qty");
-// const submit = document.querySelector(".btn")
 const list = document.getElementById("list");
 const alert = document.querySelector(".alert");
 // console.log(submit)
 
 const items = JSON.parse(window.localStorage.getItem("items"));
-
-// default
 
 // create tableRow FUNCTION
 const createTR = (id, name, qty) => {
@@ -123,6 +120,7 @@ list.addEventListener("click", (e) => {
 // RESET BTN
 const resetBtn = document.getElementById("reset");
 resetBtn.addEventListener("click", (e) => {
+  window.localStorage.clear('items')
   list.innerHTML = "";
 
   resetBtn.innerText = "";
